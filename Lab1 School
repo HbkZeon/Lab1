@@ -13,19 +13,19 @@
 # Resources: Class notes,prior game development knowledge,help from a friend, and the code was written in pycharm
 
 # floor plan  data
-length = float(input("Enter the length of the room in feet): "))
-width = float(input("Enter the width of the room in feet): "))
-cost_per_sqft = float(input("Enter the cost of flooring per square foot: "))
+length = float(input("Enter the length of the room in feet: "))
+width = float(input("Enter the width of the room in feet: "))
+costpersqft = float(input("Enter the cost of flooring per square foot: "))
 
 # Calculations and taxes
-total_sqft = length * width
-flooring_cost = total_sqft * cost_per_sqft
-taxes = flooring_cost * 0.07
-total_due = flooring_cost + taxes
+totalsqft = length * width
+flooringcost = totalsqft * costpersqft
+taxes = flooringcost * 0.07
+totaldue = flooringcost + taxes
 
 # results displayed
 print("\n--- Flooring Cost ---")
-print(f"The total area of your room is {total_sqft} square feet.")
-print(f"The flooring alone will cost ${flooring_cost:.2f}.")
+print(f"The total area of your room is {totalsqft} square feet.")
+print(f"The flooring alone will cost ${flooringcost:.2f}.")
 print(f"At a tax rate of 7%, the tax comes to ${taxes:.2f}.")
-print(f"That makes your total amount due ${total_due:.2f}.")
+print(f"That makes your total amount due ${totaldue:.2f}.")
