@@ -1,0 +1,31 @@
+# Program Name: Lab 1.py
+# Course: IT1114/Section 1
+# Student Name: Christopher James
+# Assignment Number: Lab#1
+# Due Date: 08/31/2025
+
+# Purpose: This program calculates the total cost of purchasing flooring for a room.
+#          It asks the user to enter the length and width of the room and the cost of
+#          flooring per square foot. The program then calculates the total square
+#          feet needed, the flooring cost, the tax (7%), and the final amount due.
+
+
+# Resources: Class notes,prior game development knowledge,help from a friend, and the code was written in pycharm
+
+# floor plan  data
+length = float(input("Enter the length of the room in feet): "))
+width = float(input("Enter the width of the room in feet): "))
+cost_per_sqft = float(input("Enter the cost of flooring per square foot: "))
+
+# Calculations and taxes
+total_sqft = length * width
+flooring_cost = total_sqft * cost_per_sqft
+taxes = flooring_cost * 0.07
+total_due = flooring_cost + taxes
+
+# results displayed
+print("\n--- Flooring Cost ---")
+print(f"The total area of your room is {total_sqft} square feet.")
+print(f"The flooring alone will cost ${flooring_cost:.2f}.")
+print(f"At a tax rate of 7%, the tax comes to ${taxes:.2f}.")
+print(f"That makes your total amount due ${total_due:.2f}.")
