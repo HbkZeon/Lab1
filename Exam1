@@ -1,0 +1,54 @@
+# Program Name: Exam1.py
+# Course: IT1114 BWA Programming Principles
+# Student Name: Christopher James
+# Assignment Number: Exam 1
+# Due Date: 9/28/2025
+
+# Resources: Class notes,prior game development knowledge,help from a friend, and the code was written in pycharm
+
+# Purpose: This program determines a user's income tax by considering their
+# income, married situation, and home location details.
+
+
+# --- User Data Collection ---
+annual_income = float(input("What was your total income for this tax year?: "))
+
+married_status = input("Are you married? [y/n]: ")
+
+marriage_length = 0
+if married_status == 'y':
+    marriage_length = int(input("How long have you been married?: "))
+
+home_location = int(input("Is the elevation of your home address below-1, at- 2, above- 3 sea level?[1/2/3]: "))
+
+bedroom_count = 0
+if home_location == 3:
+    bedroom_count = int(input("How many bedrooms are in your house?: "))
+
+
+# --- Tax Calculation stuff ---
+
+base_tax = 0.0
+if annual_income < 10000:
+    base_tax = annual_income * 0.023
+elif annual_income >= 10000 and annual_income <= 50000:
+    base_tax = annual_income * 0.045
+else: # This covers anything over 50,000
+    base_tax = annual_income * 0.061
+
+marital_adjustment = 0.0
+if married_status == 'y':
+    marital_adjustment = -1 * (1.2 * marriage_length)
+
+elevation_surcharge = 0.0
+if home_location == 1: # Below sea level
+    elevation_surcharge = 18.32
+elif home_location == 2: # At sea level
+    elevation_surcharge = annual_income * 0.016
+elif home_location == 3: # Above sea level
+    elevation_surcharge = 5.00 * bedroom_count
+
+total_tax = base_tax + marital_adjustment + elevation_surcharge
+
+
+print("The total tax for {} is: {}".format(annual_income, total_tax))
